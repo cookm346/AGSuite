@@ -4,10 +4,10 @@
 \alias{levdist}
 \title{Levenshtein (edit) Distance}
 \usage{
-levdist(training, test, measure)
+levdist(train, test, measure)
 }
 \arguments{
-\item{training}{a vector of training strings}
+\item{train}{a vector of training strings}
 
 \item{test}{a vector of test strings}
 

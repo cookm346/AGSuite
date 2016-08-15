@@ -1,33 +1,33 @@
 #' ACS (Associative Chunk Strength)
 #'
 #' Computes Associative Chunk Strength
-#' @param training a vector of training strings
+#' @param train a vector of training strings
 #' @param test a vector of test strings
 #' @param n_gram the chunk sizes to analyze
-#' @param anchor whether the entire string is analyzed, or only the bgeinning and end of the string (i.e., anchors)
+#' @param anchor whether the entire string is analyzed, or only the beginning and end of the string (i.e., anchors)
 #' @return a vector containing the ACS of each test string
 #' @export
 
 #ACS FUNCTION
-acs <- function(training, test, n_gram = 2, anchor = FALSE){
+acs <- function(train, test, n_gram = 2, anchor = FALSE){
 
     #extract all training grams and store to matrix g
-    g <- matrix(" ", length(training), (max(nchar(training))) - (n_gram - 1))
+    g <- matrix(" ", length(train), (max(nchar(train))) - (n_gram - 1))
 
-    for(i in 1:(length(training))){
-        for(j in 1:(nchar(training[i]) - (n_gram - 1))){
-            g[i, j] <- substring(training[i], j, (j + (n_gram - 1)))
+    for(i in 1:(length(train))){
+        for(j in 1:(nchar(train[i]) - (n_gram - 1))){
+            g[i, j] <- substring(train[i], j, (j + (n_gram - 1)))
         }
     }
 
     if(anchor == TRUE){
 
-        a <- matrix(0, (length(training) * 2))
+        a <- matrix(0, (length(train) * 2))
 
-        for(i in 1:length(training)){
+        for(i in 1:length(train)){
 
             a[i] <- g[i]
-            a[i + length(training)] <- g[nchar(training[i]) - (n_gram - 1)]
+            a[i + length(train)] <- g[nchar(train[i]) - (n_gram - 1)]
         }
 
         g <- a

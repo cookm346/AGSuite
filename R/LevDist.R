@@ -1,14 +1,14 @@
 #' Levenshtein (edit) Distance
 #'
 #' Computes Levenshtein (Edit) Distance
-#' @param training a vector of training strings
+#' @param train a vector of training strings
 #' @param test a vector of test strings
 #' @param measure the measure to be used (mean, median, min, max)
 #' @return a vector containing the Levenshtein (edit) Distance of each test string
 #' @export
 
-levdist <- function (training, test, measure) {
-    d <- adist(test, training)
+levdist <- function (train, test, measure) {
+    d <- adist(test, train)
     if (measure == "mean") {
         d <- as.matrix(apply(d, 1, mean))
     }

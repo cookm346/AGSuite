@@ -4,10 +4,10 @@
 \alias{legalentry}
 \title{Legal Enrty}
 \usage{
-legalentry(training, test)
+legalentry(train, test)
 }
 \arguments{
-\item{training}{a vector of training strings}
+\item{train}{a vector of training strings}
 
 \item{test}{a vector of test strings}
 }

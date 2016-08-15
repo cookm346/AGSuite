@@ -4,10 +4,10 @@
 \alias{novelty}
 \title{Novelty}
 \usage{
-novelty(training, test, n_gram = 2, proportion = FALSE)
+novelty(train, test, n_gram = 2, proportion = FALSE)
 }
 \arguments{
-\item{training}{a vector of training strings}
+\item{train}{a vector of training strings}
 
 \item{test}{a vector of test strings}
 

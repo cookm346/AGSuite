@@ -1,20 +1,20 @@
 #' Novelty
 #'
 #' Computes test string novelty
-#' @param training a vector of training strings
+#' @param train a vector of training strings
 #' @param test a vector of test strings
 #' @param n_gram the chunk sizes to analyze
 #' @param proportion whether the output represents raw values or is proportional to length of the string
 #' @return a vector of the novelty of each test string
 #' @export
 
-novelty <- function(training, test, n_gram = 2, proportion = FALSE) {
+novelty <- function(train, test, n_gram = 2, proportion = FALSE) {
     #extract all training grams and store to matrix g
-    g <- matrix(" ", length(training), (max(nchar(training))) - 1)
+    g <- matrix(" ", length(train), (max(nchar(train))) - 1)
 
-    for(i in 1:(length(training))){
-        for(j in 1:(nchar(training[i]) - (n_gram - 1))){
-            g[i, j] <- substring(training[i], j, (j + (n_gram - 1)))
+    for(i in 1:(length(train))){
+        for(j in 1:(nchar(train[i]) - (n_gram - 1))){
+            g[i, j] <- substring(train[i], j, (j + (n_gram - 1)))
         }
     }
 

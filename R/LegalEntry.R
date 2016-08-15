@@ -1,16 +1,16 @@
 #' Legal Enrty
 #'
 #' Computes whether the test string contains a legal entry (0 = illegal, 1 = legal)
-#' @param training a vector of training strings
+#' @param train a vector of training strings
 #' @param test a vector of test strings
 #' @return a vector of legal entries values for each test string
 #' @export
 
-legalentry <- function(training, test){
-    g <- matrix(" ", length(training))
+legalentry <- function(train, test){
+    g <- matrix(" ", length(train))
 
-    for(i in 1:length(training)){
-        g[i] <- substring(training[i], 1, 1)
+    for(i in 1:length(train)){
+        g[i] <- substring(train[i], 1, 1)
     }
 
     g <- unique(g)

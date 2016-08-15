@@ -4,16 +4,16 @@
 \alias{acs}
 \title{ACS (Associative Chunk Strength)}
 \usage{
-acs(training, test, n_gram = 2, anchor = FALSE)
+acs(train, test, n_gram = 2, anchor = FALSE)
 }
 \arguments{
-\item{training}{a vector of training strings}
+\item{train}{a vector of training strings}
 
 \item{test}{a vector of test strings}
 
 \item{n_gram}{the chunk sizes to analyze}
 
-\item{anchor}{whether the entire string is analyzed, or only the bgeinning and end of the string (i.e., anchors)}
+\item{anchor}{whether the entire string is analyzed, or only the beginning and end of the string (i.e., anchors)}
 }
 \value{
 a vector containing the ACS of each test string

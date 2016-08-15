@@ -4,10 +4,10 @@
 \alias{theworks}
 \title{The Works}
 \usage{
-theworks(training, test)
+theworks(train, test)
 }
 \arguments{
-\item{training}{a vector of training strings}
+\item{train}{a vector of training strings}
 
 \item{test}{a vector of test strings}
 }
