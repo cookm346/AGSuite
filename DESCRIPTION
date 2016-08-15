@@ -1,0 +1,12 @@
+Package: AGSuite
+Type: Package
+Title: Generates item-level statistics for artificial grammar strings.
+Version: 0.1.0
+Author: Matt Cook <cookm346@myumanitoba.ca>, Chrissy Chubala, Randall Jamieson
+Maintainer: Matt Cook <cookm346@myumanitoba.ca>
+Description: This package takes training and test stimuli for artificial grammar
+    learning experiements. It outputs item level statistics to be used as predictors
+    in regression models.
+License: MIT
+LazyData: TRUE
+RoxygenNote: 5.0.1
