@@ -8,7 +8,7 @@
 #' @export
 
 levdist <- function (train, test, measure) {
-    d <- adist(test, train)
+    d <- adist(test, train, ignore.case = TRUE)
     if (measure == "mean") {
         d <- as.matrix(apply(d, 1, mean))
     }
