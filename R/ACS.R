@@ -11,15 +11,18 @@
 #ACS FUNCTION
 acs <- function(train, test, n_gram = 2, anchor = FALSE){
 
-    #extract all training grams and store to matrix g
+    #generate matrix to store the training grams
     g <- matrix(" ", length(train), (max(nchar(train))) - (n_gram - 1))
 
+    #extract all training strings grams and save them in matrix g
     for(i in 1:(length(train))){
         for(j in 1:(nchar(train[i]) - (n_gram - 1))){
             g[i, j] <- substring(train[i], j, (j + (n_gram - 1)))
         }
     }
 
+    #if anchor is set to TRUE
+    # extract only first and last gram from each training string
     if(anchor == TRUE){
 
         a <- matrix(0, (length(train) * 2))
@@ -36,6 +39,7 @@ acs <- function(train, test, n_gram = 2, anchor = FALSE){
     #count occurance of test grams observed in training grams
     acs <- matrix(0, length(test))
 
+    #for each test string count the number of n gram matches
     for(i in 1:(length(test))){
         count <- 0
         for(j in 1:(nchar(test[i]) - (n_gram - 1))){

@@ -9,17 +9,24 @@
 #' @export
 
 novelty <- function(train, test, n_gram = 2, proportion = FALSE) {
-    #extract all training grams and store to matrix g
+
+    #generate matrix to store the training grams
     g <- matrix(" ", length(train), (max(nchar(train))) - 1)
 
+    #extract grams and save them in matrix g
     for(i in 1:(length(train))){
         for(j in 1:(nchar(train[i]) - (n_gram - 1))){
             g[i, j] <- substring(train[i], j, (j + (n_gram - 1)))
         }
     }
 
+    #results matrix to store count of novel n-grams
     r <- matrix(0, length(test))
 
+    #for each test string, generate a count equal to the number of
+    # n-grams for that string
+    # remove one from the count each time a macth occurs
+    # and store in results vector r
     for(i in 1:length(test)) {
         count <- (nchar(test[i]) - (n_gram - 1))
         for(j in 1:(nchar(test[i]) - (n_gram - 1))) {
@@ -30,8 +37,11 @@ novelty <- function(train, test, n_gram = 2, proportion = FALSE) {
         }
     }
 
+    #generate blank proportion name
     p_name <- ""
 
+    #if proportion is set to TRUE
+    # update proportion name
     if(proportion == TRUE){
         r <- r / (nchar(test) - (n_gram - 1))
         p_name <- "Proportion"
