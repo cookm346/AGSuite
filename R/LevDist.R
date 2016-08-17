@@ -8,19 +8,14 @@
 #' @export
 
 levdist <- function (train, test, measure) {
+
     d <- adist(test, train, ignore.case = TRUE)
-    if (measure == "mean") {
-        d <- as.matrix(apply(d, 1, mean))
-    }
-    if (measure == "median") {
-        d <- as.matrix(apply(d, 1, median))
-    }
-    if (measure == "min") {
-        d <- as.matrix(apply(d, 1, min))
-    }
-    if (measure == "max") {
-        d <- as.matrix(apply(d, 1, max))
-    }
+
+    if (measure == "mean")     d <- as.matrix(apply(d, 1, mean))
+    if (measure == "median")   d <- as.matrix(apply(d, 1, median))
+    if (measure == "min")      d <- as.matrix(apply(d, 1, min))
+    if (measure == "max")      d <- as.matrix(apply(d, 1, max))
+
     rownames(d) <- test
     colnames(d) <- paste("Levenshtein Distance ", "(", measure,
                          ")", sep = "")

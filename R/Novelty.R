@@ -37,18 +37,10 @@ novelty <- function(train, test, n_gram = 2, proportion = FALSE) {
         p_name <- "Proportion"
     }
 
-    if(n_gram == 2){
-        colnames(r) <- paste("Bigram Novelty", p_name, sep = " ")
-    }
-    if(n_gram == 3){
-        colnames(r) <- paste("Trigram Novelty", p_name, sep = " ")
-    }
-    if(n_gram == 4){
-        colnames(r) <- paste("4-gram Novelty", p_name, sep = " ")
-    }
-    if(n_gram == 5){
-        colnames(r) <- paste("5-gram Novelty", p_name, sep = " ")
-    }
+    if(n_gram == 2)  colnames(r) <- paste("Bigram Novelty", p_name, sep = " ")
+    if(n_gram == 3)  colnames(r) <- paste("Trigram Novelty", p_name, sep = " ")
+    if(n_gram == 4)  colnames(r) <- paste("4-gram Novelty", p_name, sep = " ")
+    if(n_gram == 5)  colnames(r) <- paste("5-gram Novelty", p_name, sep = " ")
 
     rownames(r) <- test
     return(r)

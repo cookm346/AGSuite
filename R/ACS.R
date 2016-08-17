@@ -56,18 +56,10 @@ acs <- function(train, test, n_gram = 2, anchor = FALSE){
 
     rownames(acs) <- test
 
-    if(n_gram == 2){
-        colnames(acs) <- paste(a_name, "Bigram ACS", sep = " ")
-    }
-    if(n_gram == 3){
-        colnames(acs) <- paste(a_name, "Trigram ACS", sep = " ")
-    }
-    if(n_gram == 4){
-        colnames(acs) <- paste(a_name, "4-gram ACS", sep = " ")
-    }
-    if(n_gram == 5){
-        colnames(acs) <- paste(a_name, "5-gram ACS", sep = " ")
-    }
+    if(n_gram == 2)  colnames(acs) <- paste(a_name, "Bigram ACS", sep = " ")
+    if(n_gram == 3)  colnames(acs) <- paste(a_name, "Trigram ACS", sep = " ")
+    if(n_gram == 4)  colnames(acs) <- paste(a_name, "4-gram ACS", sep = " ")
+    if(n_gram == 5)  colnames(acs) <- paste(a_name, "5-gram ACS", sep = " ")
 
     return(acs)
 }
