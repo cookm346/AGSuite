@@ -35,4 +35,6 @@ theworks <- function(train, test){
                  aacs2, aacs3, gacs, aacs, ldmean, ldmedian, ldmin, ldmax)
     
     colnames(m)[c(7, 8, 13, 14)] <- c("Chunk Novelty, Novel Chunk Proportion, Global ACS, Anchor ACS")
+    
+    return(m)
 }
