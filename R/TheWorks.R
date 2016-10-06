@@ -34,7 +34,7 @@ theworks <- function(train, test){
     m <- cbind(sl, le, n2, n3, ncp2, ncp3, cn, ncp, gacs2, gacs3, 
                  aacs2, aacs3, gacs, aacs, ldmean, ldmedian, ldmin, ldmax)
     
-    colnames(m)[c(7, 8, 13, 14)] <- c("Chunk Novelty, Novel Chunk Proportion, Global ACS, Anchor ACS")
+    colnames(m)[c(7, 8, 13, 14)] <- c("Chunk Novelty", "Novel Chunk Proportion", "Global ACS", "Anchor ACS")
     
     return(m)
 }
