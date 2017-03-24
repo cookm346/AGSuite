@@ -54,13 +54,14 @@ acs <- function(train, test, n_gram = 2, anchor = FALSE){
         test_grams <- anchorGrams(test_grams)
     }
     
-    
+
     acs <- matrix(0, length(test))
     
     for(i in 1:nrow(test_grams)){
         count <- 0
         for(j in 1:ncol(test_grams)){
-            count <- count + sum(train_grams %in% test_grams[i,j] == TRUE)
+            # count <- count + sum(train_grams %in% test_grams[i,j] == TRUE)
+            count <- count + sum(train_grams %in% test_grams[i,j])
         }
         acs[i] <- count
     }

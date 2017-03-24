@@ -31,15 +31,17 @@ theworks <- function(train, test){
     ldmin <- levdist(train, test, measure = "min")
     ldmax <- levdist(train, test, measure = "max")
     
+    r <- redundancy(test)
+    
     
     m <- cbind(sl, le, ldmin, ldmean, ldmedian, ldmax, gacs2, gacs3, gacs, aacs2, aacs3, aacs,
-               n2, n3, cn, ncp2, ncp3, ncp)
+               n2, n3, cn, ncp2, ncp3, ncp, r)
     
     
     colnames(m) <- c("String Length", "Legal Entry", "Min Levenshtein", "Mean Levenshtein", "Median Levenshtein", "Max Levenshtein",
                      "Global Bigram ACS", "Global Trigram ACS", "Global ACS", "Anchor Bigram ACS",
                      "Anchor Trigram ACS", "Anchor ACS", "Bigram Novelty", "Trigram Novelty",
-                     "Chunk Novelty", "Bigram NCP", "Trigram NCP", "NCP")
+                     "Chunk Novelty", "Bigram NCP", "Trigram NCP", "NCP", "First-Order Redundancy")
     
     return(m)
 }
