@@ -17,4 +17,3 @@ a vector of legal entries values for each test string
 \description{
 Computes whether the test string contains a legal entry (0 = illegal, 1 = legal)
 }
-

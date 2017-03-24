@@ -19,4 +19,3 @@ a vector containing the Levenshtein (edit) Distance of each test string
 \description{
 Computes Levenshtein (Edit) Distance
 }
-

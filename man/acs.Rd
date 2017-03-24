@@ -21,4 +21,3 @@ a vector containing the ACS of each test string
 \description{
 Computes Associative Chunk Strength
 }
-

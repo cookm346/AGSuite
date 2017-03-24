@@ -5,6 +5,19 @@
 #' @return a vector containing the first-order redundancy of each test string
 #' @export
 
+redundancy <- function(test){
+
+    r <- matrix(0, length(test))
+
+    for(i in 1:length(test)){
+        r[i] <- re(test[i])
+    }
+
+    rownames(r) <- test
+    colnames(r) <- "Redundancy"
+
+    return(r)
+}
 
 re <- function(x){
     n <- nchar(x)
@@ -17,16 +30,3 @@ re <- function(x){
     return(1 - (  (-1*sum(p * log2(p)))  /  log2(n - 1)  ))
 }
 
-redundancy <- function(test){
-    
-    r <- matrix(0, length(test))
-    
-    for(i in 1:length(test)){
-        r[i] <- re(test[i])
-    }
-    
-    rownames(r) <- test
-    colnames(r) <- "Redundancy"
-    
-    return(r)
-}

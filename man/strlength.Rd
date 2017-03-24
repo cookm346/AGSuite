@@ -15,4 +15,3 @@ a vector containing the length of each test string
 \description{
 Computes the length of each letter string
 }
-

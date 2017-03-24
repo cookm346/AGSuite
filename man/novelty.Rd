@@ -21,4 +21,3 @@ a vector of the novelty of each test string
 \description{
 Computes test string novelty
 }
-

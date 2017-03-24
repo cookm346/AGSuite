@@ -12,9 +12,8 @@ theworks(train, test)
 \item{test}{a vector of test strings}
 }
 \value{
-a matrix containing string length, legal entry, four measures of novelty, four measures of ACS (Associative Chunk Strength), and four measures of Levenshtein (edit) distance
+a matrix containing string length, legal entry, six measures of novelty, six measures of ACS (Associative Chunk Strength), and four measures of Levenshtein (edit) distance
 }
 \description{
 Computes all item-level statistics
 }
-
