@@ -16,7 +16,7 @@ analogy <- function(train, test){
     }
 
     rownames(ptrn) <- test
-    colnames(ptrn) <- "Pattern Matches"
+    colnames(ptrn) <- "Analogical Similarity"
 
     return(ptrn)
 }
