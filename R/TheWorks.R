@@ -3,7 +3,7 @@
 #' Computes all item-level statistics
 #' @param train a vector of training strings
 #' @param test a vector of test strings
-#' @return a matrix containing string length, legal entry, six measures of novelty, six measures of ACS (Associative Chunk Strength), and four measures of Levenshtein (edit) distance
+#' @return a matrix containing string length, legal entry, six measures of novelty, six measures of ACS (Associative Chunk Strength), four measures of Levenshtein (edit) distance, first-order redundancy, and analogical similarity
 #' @export
 
 theworks <- function(train, test){
@@ -33,7 +33,7 @@ theworks <- function(train, test){
 
     r <- redundancy(test)
 
-    p <- pattern(train, test)
+    p <- analogy(train, test)
 
 
     m <- cbind(sl, le, ldmin, ldmean, ldmedian, ldmax, gacs2, gacs3, gacs, aacs2, aacs3, aacs,
@@ -43,7 +43,7 @@ theworks <- function(train, test){
     colnames(m) <- c("String Length", "Legal Entry", "Min Levenshtein", "Mean Levenshtein", "Median Levenshtein", "Max Levenshtein",
                      "Global Bigram ACS", "Global Trigram ACS", "Global ACS", "Anchor Bigram ACS",
                      "Anchor Trigram ACS", "Anchor ACS", "Bigram Novelty", "Trigram Novelty",
-                     "Chunk Novelty", "Bigram NCP", "Trigram NCP", "NCP", "First-Order Redundancy", "Pattern Matches")
+                     "Chunk Novelty", "Bigram NCP", "Trigram NCP", "NCP", "First-Order Redundancy", "Analogical Similarity")
 
     return(m)
 }

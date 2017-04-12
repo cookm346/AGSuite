@@ -1,4 +1,4 @@
-#' Pattern Matching
+#' Analogical Similarity
 #'
 #' Computes the number of times the pattern of the test string (regardless of surface structure) appears in training strings
 #' @param train a vector of training strings
@@ -7,7 +7,7 @@
 #' @export
 
 
-pattern <- function(train, test){
+analogy <- function(train, test){
 
     ptrn <- matrix(0, length(test))
 
